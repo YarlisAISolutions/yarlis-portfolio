@@ -2,13 +2,86 @@
 # YARLIS PORTFOLIO - DOMAIN REGISTRY
 # ============================================================
 # This file tracks all domains in the Yarlis ecosystem
-# Update when adding new domains or changing status
+# Quick access to all staging and production URLs
+# Updated: 2026-02-14
 # ============================================================
 
-version: "1.0"
+version: "1.1"
 updated: "2026-02-14"
 owner: "SamJr"
 
+# ============================================================
+# QUICK ACCESS - ALL URLs
+# ============================================================
+quick_access:
+  production:
+    - name: Yarlis.com
+      url: https://yarlis.com
+      status: "🔄 Coming Soon"
+    - name: Yarlis.ai
+      url: https://yarlis.ai
+      status: "🔄 Coming Soon"
+    - name: MyBotBox
+      url: https://mybotbox.com
+      status: "🔧 Maintenance"
+    - name: RapidTriage
+      url: https://rapidtriage.me
+      status: "✅ Live"
+    - name: Yarlis.io
+      url: https://yarlis.io
+      status: "🔄 Coming Soon"
+    - name: SDODS
+      url: https://sdods.com
+      status: "🔄 Coming Soon"
+
+  staging:
+    - name: Yarlis.com
+      url: https://yarlis-com-staging.web.app
+      status: "✅ Live"
+    - name: Yarlis.ai (Mission Control)
+      url: https://yarlis-ai-staging.web.app
+      status: "✅ Live"
+    - name: Yarlis Platform (Landing)
+      url: https://yarlis-platform.web.app
+      status: "✅ Live"
+    - name: MyBotBox
+      url: https://mybotbox-prod.web.app
+      status: "🔧 Maintenance"
+    - name: MyBotBox Staging
+      url: https://mybotbox-staging.web.app
+      status: "✅ Live"
+    - name: RapidTriage
+      url: https://rapidtriage-me.web.app
+      status: "✅ Live"
+    - name: Yarlis.io (Health Dashboard)
+      url: https://yarlis-io-staging.web.app
+      status: "✅ Live"
+
+  npm:
+    - name: "@sdods/core"
+      url: https://npmjs.com/package/@sdods/core
+    - name: "@sdods/auth"
+      url: https://npmjs.com/package/@sdods/auth
+    - name: "@sdods/ui"
+      url: https://npmjs.com/package/@sdods/ui
+    - name: "@sdods/observability"
+      url: https://npmjs.com/package/@sdods/observability
+
+  repos:
+    - name: yarlis-platform
+      url: https://github.com/siri1410/yarlis-platform
+    - name: ystudio (MyBotBox)
+      url: https://github.com/siri1410/ystudio
+    - name: smartrapidtriage
+      url: https://github.com/siri1410/smartrapidtriage
+    - name: sdods
+      url: https://github.com/siri1410/sdods
+    - name: yarlis-portfolio
+      url: https://github.com/siri1410/yarlis-portfolio
+
+# ============================================================
+# DETAILED DOMAIN REGISTRY
+# ============================================================
 domains:
   # ============================================================
   # PARENT COMPANY
@@ -25,10 +98,12 @@ domains:
       - Next.js 15
       - Firebase
       - Stripe
-    links:
+    urls:
       production: https://yarlis.com
-      staging: https://yarlis-platform.web.app
+      staging: https://yarlis-com-staging.web.app
+      landing: https://yarlis-platform.web.app
       docs: https://docs.yarlis.com
+      console: https://console.firebase.google.com/project/yarlis-platform
 
   # ============================================================
   # AI PLATFORM
@@ -46,10 +121,12 @@ domains:
       - LangChain
       - Firebase
       - Cloud Run
-    links:
+    urls:
       production: https://yarlis.ai
       staging: https://yarlis-ai-staging.web.app
+      mission_control: https://yarlis-ai-staging.web.app/mission-control
       docs: https://docs.yarlis.ai
+      console: https://console.firebase.google.com/project/yarlis-platform
 
   # ============================================================
   # NO-CODE CHATBOT BUILDER
@@ -58,7 +135,7 @@ domains:
     product: MyBotBox
     description: No-code AI chatbot builder, multi-tenant SaaS
     repo: https://github.com/siri1410/ystudio
-    status: beta
+    status: maintenance
     category: product
     monetization: saas
     moat: templates, multi_tenant, workflow_lockin
@@ -67,10 +144,15 @@ domains:
       - Firebase
       - LangChain
       - n8n-style engine
-    links:
+    urls:
       production: https://mybotbox.com
+      firebase: https://mybotbox-prod.web.app
       staging: https://mybotbox-staging.web.app
+      login: https://mybotbox.com/login
+      signup: https://mybotbox.com/signup
       pricing: https://mybotbox.com/pricing
+      console: https://console.firebase.google.com/project/mybotbox-prod
+      cloud_run: https://console.cloud.google.com/run/detail/us-central1/mybotbox-app/metrics?project=mybotbox-prod
 
   # ============================================================
   # DEVELOPER FRAMEWORK
@@ -79,7 +161,7 @@ domains:
     product: SDODS
     description: Developer framework ecosystem, reusable OSS components
     repo: https://github.com/siri1410/sdods
-    status: build
+    status: published
     category: platform
     monetization: open_core
     moat: ecosystem_gravity, developer_community
@@ -88,39 +170,39 @@ domains:
       - React
       - NestJS
     modules:
+      - "@sdods/core"
       - "@sdods/auth"
-      - "@sdods/rbac"
       - "@sdods/ui"
       - "@sdods/observability"
-      - "@sdods/billing"
-    links:
+    urls:
       production: https://sdods.com
-      npm: https://npmjs.com/org/sdods
-      github: https://github.com/sdods
+      npm_org: https://npmjs.com/org/sdods
+      npm_core: https://npmjs.com/package/@sdods/core
+      npm_auth: https://npmjs.com/package/@sdods/auth
+      npm_ui: https://npmjs.com/package/@sdods/ui
+      npm_observability: https://npmjs.com/package/@sdods/observability
+      github: https://github.com/siri1410/sdods
 
   # ============================================================
-  # IDEA-TO-DEPLOYMENT ENGINE
+  # INFRASTRUCTURE CONTROL PLANE
   # ============================================================
   - domain: yarlis.io
     product: Yarlis IO
-    description: Workspace-driven rapid app builder (like Manus.ai)
+    description: Infrastructure control plane, health monitoring dashboard
     repo: https://github.com/siri1410/yarlis-platform
-    status: idea
-    category: product
-    monetization: usage_based
+    status: beta
+    category: infrastructure
+    monetization: internal
     moat: speed, platform_primitives
     stack:
       - Next.js 15
-      - AI Code Generation
-      - Playwright
-      - Cloud Run
-    features:
-      - Natural language → App scaffolding
-      - Template library
-      - One-click deploy
-      - Browser automation
-    links:
+      - Static Export
+      - Health Checks
+    urls:
       production: https://yarlis.io
+      staging: https://yarlis-io-staging.web.app
+      health_dashboard: https://yarlis-io-staging.web.app
+      console: https://console.firebase.google.com/project/yarlis-platform
 
   # ============================================================
   # AI TRIAGE PLATFORM
@@ -129,7 +211,7 @@ domains:
     product: SmartRapidTriage
     description: IT/Software/Healthcare AI triage and prioritization
     repo: https://github.com/siri1410/smartrapidtriage
-    status: beta
+    status: live
     category: healthcare
     monetization: per_seat
     moat: workflow_lockin, data_flywheel
@@ -138,12 +220,8 @@ domains:
       - Firebase
       - LangChain
       - Playwright
-    use_cases:
-      - IT ticket triage
-      - Software bug prioritization
-      - Healthcare symptom assessment
-      - Emergency response routing
-    links:
+    urls:
       production: https://rapidtriage.me
       staging: https://rapidtriage-me.web.app
-      chrome_extension: TBD
+      health: https://rapidtriage.me/api/health
+      console: https://console.firebase.google.com/project/rapidtriage-me
