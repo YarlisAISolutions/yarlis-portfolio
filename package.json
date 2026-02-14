@@ -1,0 +1,17 @@
+{
+  "name": "yarlis-portfolio",
+  "version": "1.0.0",
+  "description": "Yarlis Portfolio - AI Automation Infrastructure Company",
+  "private": true,
+  "scripts": {
+    "generate": "npx tsx scripts/generate-site.ts",
+    "dev": "npx serve public",
+    "build": "npm run generate"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "yaml": "^2.3.0",
+    "serve": "^14.0.0"
+  },
+  "license": "MIT"
+}
