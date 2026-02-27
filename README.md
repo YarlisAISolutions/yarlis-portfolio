@@ -37,7 +37,7 @@
 | [mybotbox.com](https://mybotbox.com) | ✅ Live (200) | Cloud Run → mybotbox-prod |
 | [yarlis.com](https://yarlis.com) | ✅ Live (200) | Cloud Run → yarlis-platform |
 | [rapidtriage.me](https://rapidtriage.me) | ⚠️ 522 | Cloudflare origin error — needs fix |
-| staging.mybotbox.com | ❌ Not mapped | Domain mapping required |
+| staging-app.mybotbox.com | ❌ Not mapped | Domain mapping required |
 | yarlis.ai | ❌ DNS not configured | — |
 | yarlis.io | ❌ DNS not configured | — |
 | sdods.com | ❌ DNS not configured | — |
@@ -250,7 +250,7 @@ See [mybotbox-platform/RELEASE-PROCESS.md](https://github.com/siri1410/mybotbox-
 ## 🔧 Action Items
 
 ### 🔴 Critical
-- [ ] Fix `staging.mybotbox.com` domain mapping
+- [ ] Fix `staging-app.mybotbox.com` domain mapping
 - [ ] Fix `rapidtriage.me` 522 error (Cloudflare origin)
 
 ### 🟡 Optimization
