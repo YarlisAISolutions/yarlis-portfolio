@@ -14,154 +14,254 @@
 | Domain | Product | Repo | Status | Category | Monetization |
 |--------|---------|------|--------|----------|--------------|
 | [yarlis.com](https://yarlis.com) | Yarlis Core | [yarlis-platform](https://github.com/siri1410/yarlis-platform) | 🟡 Build | Platform | Subscription |
-| [yarlis.ai](https://yarlis.ai) | Yarlis AI | [yarlis-platform](https://github.com/siri1410/yarlis-platform) | 🟢 Beta | AI | Enterprise |
+| [yarlis.ai](https://yarlis.ai) | Yarlis AI | [yarlis-platform](https://github.com/siri1410/yarlis-platform) | 🟡 Build | AI | Enterprise |
 | [mybotbox.com](https://mybotbox.com) | MyBotBox | [mybotbox-platform](https://github.com/siri1410/mybotbox-platform) | 🟢 Beta | Product | SaaS |
 | [sdods.com](https://sdods.com) | SDODS | [sdods](https://github.com/siri1410/sdods) | 🟡 Build | Platform | Open Core |
 | [yarlis.io](https://yarlis.io) | Yarlis IO | [yarlis-platform](https://github.com/siri1410/yarlis-platform) | 🔴 Idea | Product | Usage-based |
-| [rapidtriage.me](https://rapidtriage.me) | SmartRapidTriage | [smartrapidtriage](https://github.com/siri1410/smartrapidtriage) | 🟢 Beta | Healthcare | Per-seat |
+| [rapidtriage.me](https://rapidtriage.me) | SmartRapidTriage | [smartrapidtriage](https://github.com/siri1410/smartrapidtriage) | 🟢 Beta | Software Triage | Per-seat |
 
 ### Status Legend
 - 🔴 **Idea** — Concept phase
 - 🟡 **Build** — Active development
-- 🟢 **Beta** — Testing with users
+- 🟢 **Beta** — Deployed, testing with users
 - 🔵 **Prod** — Live and monetizing
+
+---
+
+## 🌐 Live Infrastructure (Verified 2026-02-26)
+
+### Domain Health
+
+| Domain | Status | Serving From |
+|--------|--------|-------------|
+| [mybotbox.com](https://mybotbox.com) | ✅ Live (200) | Cloud Run → mybotbox-prod |
+| [yarlis.com](https://yarlis.com) | ✅ Live (200) | Cloud Run → yarlis-platform |
+| [rapidtriage.me](https://rapidtriage.me) | ⚠️ 522 | Cloudflare origin error — needs fix |
+| staging.mybotbox.com | ❌ Not mapped | Domain mapping required |
+| yarlis.ai | ❌ DNS not configured | — |
+| yarlis.io | ❌ DNS not configured | — |
+| sdods.com | ❌ DNS not configured | — |
+
+### GCP Projects
+
+| Display Name | Project ID | Purpose | Monthly Cost |
+|---|---|---|---|
+| MyBotBox Staging | `ystudio-core` | Staging + dev | $84.64 |
+| MyBotBox | `mybotbox-prod` | Production | $11.97 |
+| RapidTriageME | `rapidtriage-me` | SRT production | $0.52 |
+| Yarlis Platform | `yarlis-platform` | yarlis.com hosting | $0.02 |
+| Continuum | `continuum-c...` | Shared infra | $7.94 |
+| Siribot | `siribot-ai-176...` | Dormant | $0.00 |
+
+**Total: ~$105/mo | Revenue: $0**
+
+### Cloud Run Services (Live)
+
+<details>
+<summary><strong>ystudio-core (Staging) — 12 services</strong></summary>
+
+| Service | Status |
+|---|---|
+| mybotbox-app-staging | ✅ 200 |
+| mybotbox-app | ✅ |
+| crawl4ai | ✅ |
+| executewebhook | ✅ |
+| executeworkflow | ✅ |
+| processknowledgebase | ✅ |
+| triggerknowledgeprocessing | ✅ |
+| triggerwebhook | ✅ |
+| triggerworkflowexecution | ✅ |
+| yarlis-production | ✅ (⚠️ wrong project) |
+| yarlis-staging | ✅ (⚠️ wrong project) |
+| mybotbox-docs-staging | ❌ Down |
+
+</details>
+
+<details>
+<summary><strong>mybotbox-prod (Production) — 8 services</strong></summary>
+
+| Service | Status |
+|---|---|
+| mybotbox-app | ✅ 200 |
+| executewebhook | ✅ |
+| executeworkflow | ✅ |
+| processknowledgebase | ✅ |
+| triggerknowledgeprocessing | ✅ |
+| triggerwebhook | ✅ |
+| triggerworkflowexecution | ✅ |
+| ystudio-app-staging | ❌ Down (legacy) |
+
+</details>
+
+<details>
+<summary><strong>rapidtriage-me — 24 services</strong></summary>
+
+| Service | Status |
+|---|---|
+| api | ✅ |
+| rapidtriage-server | ✅ |
+| auth | ✅ |
+| sse | ✅ |
+| health | ✅ |
+| stripewebhook | ✅ |
+| createcheckoutsession | ✅ |
+| createportalsession | ✅ |
+| getsubscription | ✅ |
+| cancelsubscription | ✅ |
+| reactivatesubscription | ✅ |
+| createapikey | ✅ |
+| revokeapikey | ✅ |
+| capturescreenshot | ✅ |
+| onscreenshotcreated | ✅ |
+| cleanupexpiredscreenshots | ✅ |
+| cleanupexpiredsessions | ✅ |
+| connectwebhook | ✅ |
+| metrics | ✅ |
+| aggregatemetrics | ✅ |
+| onuserprofilecreated | ✅ |
+| apidocs | ✅ |
+| legal | ✅ |
+| status | ✅ |
+
+</details>
+
+<details>
+<summary><strong>yarlis-platform — 2 services</strong></summary>
+
+| Service | Status |
+|---|---|
+| yarlis-com | ✅ |
+| yarlis-com-staging | ✅ |
+
+</details>
+
+### Cloud SQL Databases
+
+| Instance | Project | Tier | Status |
+|---|---|---|---|
+| ystudio-staging-db | ystudio-core | db-g1-small (PG 15) | ✅ |
+| ystudio-db-budget | ystudio-core | db-custom-1-3840 (PG 15) | ⚠️ Overkill for staging |
+| mybotbox-db | mybotbox-prod | db-f1-micro (PG 15) | ✅ |
+
+### Firebase Hosting
+
+| Site | URL | Project |
+|---|---|---|
+| ystudio-core | https://ystudio-core.web.app | ystudio-core |
+| mybotbox-prod | https://mybotbox-prod.web.app | mybotbox-prod |
+| rapidtriage-me | https://rapidtriage-me.web.app | rapidtriage-me |
 
 ---
 
 ## 🎯 Strategy
 
-### Platform Ecosystem
+### Architecture — Independent Products, Shared Core
 
 ```
                     ┌─────────────────┐
-                    │   yarlis.com    │
-                    │ (Parent + Auth) │
+                    │   @sdods/*      │
+                    │ (Shared Pkgs)   │
                     └────────┬────────┘
                              │
-        ┌────────────────────┼────────────────────┐
-        │                    │                    │
-        ▼                    ▼                    ▼
-┌───────────────┐   ┌───────────────┐   ┌───────────────┐
-│   yarlis.ai   │   │  mybotbox.com │   │ rapidtriage.me│
-│  (AI Platform)│   │  (No-Code Bot)│   │  (AI Triage)  │
-└───────┬───────┘   └───────┬───────┘   └───────┬───────┘
-        │                   │                   │
-        └───────────────────┼───────────────────┘
-                            │
-                    ┌───────┴───────┐
-                    │   sdods.com   │
-                    │  (OSS Core)   │
-                    └───────────────┘
+              ┌──────────────┼──────────────┐
+              │              │              │
+              ▼              ▼              ▼
+     ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+     │ mybotbox.com │ │rapidtriage.me│ │ yarlis.com   │
+     │ (Independent)│ │ (Independent)│ │ yarlis.ai    │
+     │              │ │              │ │ yarlis.io    │
+     └──────────────┘ └──────────────┘ └──────────────┘
+       mybotbox-       smartrapidtriage  yarlis-platform
+       platform                         (monorepo)
 ```
 
-### How SDODS Powers Products
+**Key decision:** MyBotBox and SmartRapidTriage are **independent repos**. Only shared dependency is `@sdods` common packages.
 
-| Module | Used By | Purpose |
-|--------|---------|---------|
-| `@sdods/auth` | All products | Authentication |
-| `@sdods/rbac` | yarlis.ai, mybotbox | Role-based access |
-| `@sdods/ui` | All products | Shared components |
-| `@sdods/observability` | All products | Logging, metrics |
-| `@sdods/billing` | yarlis.com, mybotbox | Stripe integration |
+### Revenue Priority Order
+1. **MyBotBox** → fastest SaaS monetization (3,900 source files, full product)
+2. **SmartRapidTriage** → vertical niche (24 Cloud Run services, Stripe integrated)
+3. **Yarlis AI** → higher-ticket enterprise
+4. **SDODS** → open-core leverage
+5. **Yarlis IO** → long-term scale
 
-### Open Core Approach
-
-| Layer | License | Purpose |
-|-------|---------|---------|
-| **SDODS Core** | MIT | Community adoption |
-| **Platform Modules** | Apache 2.0 | Enterprise features |
-| **SaaS Products** | Proprietary | Revenue generation |
+### 90-Day Target
+**Primary:** Launch and monetize MyBotBox → $1K MRR
 
 ---
 
-## 📋 Rules of the Road
-
-### Naming Conventions
+## 📋 Naming Conventions
 
 | Type | Pattern | Example |
 |------|---------|---------|
-| Portfolio | `yarlis-portfolio` | This repo |
-| Product | `{domain-slug}` | `mybotbox`, `rapidtriage` |
-| Platform | `sdods-{module}` | `sdods-auth`, `sdods-ui` |
-| Monorepo | `yarlis-platform` | Main codebase |
+| GCP Project (prod) | `{product}` | `mybotbox-prod` |
+| GCP Project (staging) | `{product}-staging`* | `ystudio-core` (legacy) |
+| Cloud Run (prod) | `{product}-{component}` | `mybotbox-app` |
+| Cloud Run (staging) | `{product}-{component}-staging` | `mybotbox-app-staging` |
+| Git branch (prod) | `main` | — |
+| Git branch (staging) | `develop` | — |
+| Git branch (feature) | `feature/{name}` | `feature/billing-v2` |
+| Git branch (fix) | `fix/{name}` | `fix/auth-redirect` |
 
-### Branching Model
+*`ystudio-core` is immutable legacy name. Display name = "MyBotBox Staging".
 
-```
-main        ─────●─────●─────●─────●─────►  Production
-                 │     │     │
-develop     ─────●─────●─────●─────────►    Integration
-             │   │     │     │
-feature/*   ─●───┘     │     │              Short-lived
-hotfix/*    ───────────●─────┘              Emergency
-release/*   ─────────────────●──────►       Staged
-```
+### Release Types
+See [mybotbox-platform/RELEASE-PROCESS.md](https://github.com/siri1410/mybotbox-platform/blob/main/RELEASE-PROCESS.md) for full CI/CD standards.
 
-### Repo Creation Checklist
-
-- [ ] Check naming convention
-- [ ] Create from template (`templates/product-repo-template.md`)
-- [ ] Add to `portfolio/repos.yaml`
-- [ ] Set up CI/CD from standards
-- [ ] Configure branch protection
-- [ ] Add CODEOWNERS
-- [ ] Update this README table
+| Type | Scope | Example |
+|---|---|---|
+| **Static** | Frontend only, no DB | Landing page update |
+| **DB Migration** | Schema changes | Add user preferences table |
+| **Contract/API** | Endpoint changes, SDK updates | New webhook API v2 |
+| **Feature** | Full stack (UI + API + DB) | Knowledge base v2 |
 
 ---
 
-## 🗂️ Repository Structure
+## 🗂️ Repository Index
 
-```
-yarlis-portfolio/
-├── README.md                 # This file
-├── portfolio/
-│   ├── domains.yaml         # Domain registry
-│   ├── products.yaml        # Product details
-│   └── repos.yaml           # Repository index
-├── templates/
-│   ├── product-repo-template.md
-│   ├── README-product.md
-│   └── INTAKE.md            # New product intake
-├── docs/
-│   ├── architecture.md
-│   ├── naming-conventions.md
-│   └── ci-cd-standards.md
-└── .github/
-    └── workflows/
-        └── validate.yml     # Schema validation
-```
+| Repo | Category | Products | Active |
+|------|----------|----------|--------|
+| [mybotbox-platform](https://github.com/siri1410/mybotbox-platform) | Product | mybotbox.com | ✅ Primary |
+| [smartrapidtriage](https://github.com/siri1410/smartrapidtriage) | Product | rapidtriage.me | ✅ Primary |
+| [yarlis-platform](https://github.com/siri1410/yarlis-platform) | Monorepo | yarlis.com, yarlis.ai, yarlis.io | 🟡 Scaffold |
+| [sdods](https://github.com/siri1410/sdods) | Platform | Shared packages | 🟡 Scaffold |
+| [yarlis-portfolio](https://github.com/siri1410/yarlis-portfolio) | Governance | This repo | ✅ |
 
----
+### MyBotBox Tech Stack (Verified)
+- **Runtime:** Bun + Turbo monorepo
+- **Frontend:** Next.js (App Router), Tailwind CSS
+- **Backend:** API Routes + Cloud Run microservices
+- **Database:** PostgreSQL 15 (Cloud SQL) + Drizzle ORM
+- **Auth:** Firebase Auth + SSO + OAuth
+- **Payments:** Stripe (checkout, portal, webhooks)
+- **AI:** OpenAI, Anthropic, Ollama (model-agnostic)
+- **Infra:** GCP Cloud Run + Firebase Hosting + Cloud Build
 
-## 🔗 Quick Links
-
-### Products
-- [yarlis.com](https://yarlis.com) — Parent company
-- [yarlis.ai](https://yarlis.ai) — AI platform
-- [mybotbox.com](https://mybotbox.com) — No-code bots
-- [rapidtriage.me](https://rapidtriage.me) — AI triage
-
-### Documentation
-- [Architecture](docs/architecture.md)
-- [Naming Conventions](docs/naming-conventions.md)
-- [CI/CD Standards](docs/ci-cd-standards.md)
-
-### Repositories
-- [yarlis-platform](https://github.com/siri1410/yarlis-platform) — Main monorepo
-- [mybotbox-platform](https://github.com/siri1410/mybotbox-platform) — MyBotBox
-- [smartrapidtriage](https://github.com/siri1410/smartrapidtriage) — RapidTriage
-- [uip](https://github.com/siri1410/uip) — Unified Identity Platform
+### SmartRapidTriage Tech Stack (Verified)
+- **Runtime:** Node.js + Firebase Functions
+- **Frontend:** Next.js
+- **Database:** Firestore
+- **Auth:** Firebase Auth
+- **Payments:** Stripe
+- **Automation:** Playwright, Chrome Extension
+- **Infra:** GCP Cloud Run (24 services) + Firebase Hosting
 
 ---
 
-## 📈 Metrics
+## 🔧 Action Items
 
-| Metric | Value | Updated |
-|--------|-------|---------|
-| Active Products | 6 | 2026-02-14 |
-| Total Repos | 4 | 2026-02-14 |
-| Monthly Revenue | $0 | Pre-launch |
-| Active Users | 0 | Pre-launch |
+### 🔴 Critical
+- [ ] Fix `staging.mybotbox.com` domain mapping
+- [ ] Fix `rapidtriage.me` 522 error (Cloudflare origin)
+
+### 🟡 Optimization
+- [ ] Downgrade `ystudio-db-budget` (save ~$50/mo)
+- [ ] Delete dead services: `ystudio-app-staging`, `yarlis-production`, `yarlis-staging`
+- [ ] Configure DNS for yarlis.ai, yarlis.io, sdods.com
+
+### 🟢 Next
+- [ ] Deploy latest mybotbox-platform to staging
+- [ ] Set up Cloud Build triggers (develop → staging auto-deploy)
+- [ ] First paying customer
 
 ---
 
@@ -170,9 +270,8 @@ yarlis-portfolio/
 | Role | Person |
 |------|--------|
 | Founder/CEO | Siri (Sireesh Yarlagadda) |
-| Chief of Execution | SamJr 🦊 (AI) |
-| QA Lead | Dolly 🎀 (AI) |
+| Strategic Execution Partner | SamJr 🧠⚙️ (AI) |
 
 ---
 
-*Last updated: 2026-02-14 | Managed by SamJr 🦊*
+*Last verified: 2026-02-26 | All infrastructure data from live GCP/Firebase queries*
