@@ -1,98 +1,113 @@
 # 🏛️ Yarlis Portfolio
 
-> **AI Automation Infrastructure Company**
-> One ecosystem, multiple revenue streams, compounding leverage.
+> **AI Automation Infrastructure Company**  
+> One ecosystem. Six domains. Compounding leverage.
 
 [![Portfolio Status](https://img.shields.io/badge/Status-Active-green)](https://yarlis.com)
 [![Products](https://img.shields.io/badge/Products-6-blue)](portfolio/products.yaml)
+[![CICD](https://img.shields.io/badge/CICD-Jenkins%20on%20Cloud%20Run-orange)](https://cicd.yarlis.io)
+[![Vault](https://img.shields.io/badge/Secrets-Infisical%20Vault-purple)](https://vault.yarlis.io)
+[![Last Updated](https://img.shields.io/badge/Updated-2026--02--28-blue)](#)
 
 ---
 
 ## 📊 Portfolio Overview
 
-| Domain | Product | Status | Live |
-|--------|---------|--------|------|
-| [mybotbox.com](https://mybotbox.com) | **MyBotBox** | 🟢 Beta | ✅ |
-| [rapidtriage.me](https://rapidtriage.me) | **SmartRapidTriage** | 🟢 Beta | ✅ |
-| [yarlis.com](https://yarlis.com) | **Yarlis Core** | 🟡 Build | ✅ |
-| [yarlis.ai](https://yarlis.ai) | **Yarlis AI** | 🟡 Build | ❌ |
-| [sdods.com](https://sdods.com) | **SDODS** | 🟡 Build | ❌ |
-| [yarlis.io](https://yarlis.io) | **Yarlis IO** | 🔴 Idea | ❌ |
+| Domain | Product | Repo | Status | Live | Stack |
+|--------|---------|------|--------|------|-------|
+| [mybotbox.com](https://mybotbox.com) | **MyBotBox** | [mybotbox-platform](https://github.com/siri1410/mybotbox-platform) | 🟢 Beta | ✅ | Bun · Next.js 15 · Firebase · Cloud Run |
+| [rapidtriage.me](https://rapidtriage.me) | **SmartRapidTriage** | [rapidtriageME](https://github.com/siri1410/rapidtriageME) | 🟢 Beta | ✅ | TS · Cloudflare Workers · Wrangler |
+| [yarlis.com](https://yarlis.com) | **Yarlis Core** | [yarlis-platform](https://github.com/siri1410/yarlis-platform) | 🟡 Build | ✅ | Next.js 15 · Turborepo · Cloud Run |
+| [yarlis.ai](https://yarlis.ai) | **Yarlis AI** | [yarlis-platform](https://github.com/siri1410/yarlis-platform) | 🟡 Build | ❌ | NestJS · LangChain · Multi-model |
+| [sdods.com](https://sdods.com) | **SDODS** | [sdods](https://github.com/siri1410/sdods) | 🟡 Build | ❌ | TypeScript · Open Source |
+| [yarlis.io](https://yarlis.io) | **Yarlis IO** | [yarlis-platform](https://github.com/siri1410/yarlis-platform) | 🔴 Idea | ❌ | TBD |
 
 ---
 
-## 📁 Repository Structure
+## 🔱 Shared Platform Infrastructure
 
-```
-yarlis-portfolio/
-├── brand/                    # 🎨 Brand guide, colors, logos, typography
-│   ├── BRAND-GUIDE.md        # Master brand specification
-│   ├── logos/                 # Logo assets (all products)
-│   ├── colors/               # Color palettes
-│   └── guidelines/           # Usage guidelines
-├── projects/                 # 📦 Per-product documentation
-│   ├── mybotbox/
-│   │   ├── README.md         # Product overview + links
-│   │   ├── architecture/     # System design, data model, auth flow
-│   │   ├── design/           # Figma exports, component inventory
-│   │   └── docs/             # PRDs, ADRs, runbooks
-│   ├── rapidtriage/
-│   ├── sdods/
-│   ├── yarlis-core/
-│   ├── yarlis-ai/
-│   └── yarlis-io/
-├── portfolio/                # Portfolio-level configs
-│   ├── products.yaml
-│   ├── domains.yaml
-│   └── repos.yaml
-├── docs/                     # Cross-cutting documentation
-│   ├── architecture.md
-│   ├── ci-cd-standards.md
-│   ├── dns-domain-management.md
-│   └── naming-conventions.md
-├── CHANGELOG.md
-├── OPERATING-SYSTEM.md       # Yarlis Internal Operating System
-└── README.md
-```
+| Service | URL | Purpose | Status |
+|---------|-----|---------|--------|
+| **UIP** (Identity) | [uip](https://github.com/siri1410/uip) | Multi-tenant auth, RBAC, SSO | 🟢 Published |
+| **@sdods** (UI Library) | [sdods](https://github.com/siri1410/sdods) | Shared component library | 🟢 Published |
+| **CICD** | [cicd.yarlis.io](https://cicd.yarlis.io) | Jenkins on Cloud Run | 🟡 Deploying |
+| **Vault** | [vault.yarlis.io](https://vault.yarlis.io) | Infisical secrets portal | 🟡 Setup |
 
 ---
 
-## 🎨 Brand
+## 🏗️ CI/CD Architecture
 
-See [`brand/BRAND-GUIDE.md`](brand/BRAND-GUIDE.md) for the complete brand specification.
+> **Jenkins on Google Cloud Run** — `cicd.yarlis.io`
+
+```
+cicd.yarlis.io (Jenkins LTS)
+├── GCP Project:  yarlis-cicd-prod
+├── Persistence:  Cloud Filestore NFS 1TB
+├── Secrets:      GCP Secret Manager (50+ secrets)
+├── Image:        gcr.io/yarlis-cicd-prod/yarlis-jenkins:latest
+│
+├── 🟢 mybotbox    → staging + production (Cloud Run)
+├── 🟢 rapidtriage → staging + production (Cloudflare Workers)
+├── 🟡 yarlis-com  → staging + production (Cloud Run)
+├── 🟡 yarlis-ai   → staging + production (Cloud Run)
+├── 🟡 sdods       → staging + production (npm publish)
+└── ⬛ yarlis-io   → parked
+```
+
+**Pipeline stages:** Checkout → Install → TypeCheck + Lint → Tests → Security Scan → Build → Container Push → Deploy Staging → Smoke Tests → E2E Tests → **Production Approval Gate** → Deploy Production → Verify
+
+---
+
+## 🔐 Secrets Vault
+
+> **Infisical** self-hosted at `vault.yarlis.io`
+
+| Layer | Technology | Role |
+|-------|-----------|------|
+| **Portal UI** | Infisical (Cloud Run) | Manage all secrets visually |
+| **Backend** | GCP Secret Manager | Storage + audit log |
+| **Sync** | Infisical → GCP SM | Auto-sync on save |
+| **Runtime** | Cloud Run secret injection | Zero secrets in code |
+| **Dev** | `infisical run --` CLI | Pull .env locally |
+
+Secret format: `{domain}-{env}-{variable}` (e.g. `mybotbox-production-stripe-key`)
+
+---
+
+## 🧠 Architecture Decisions
+
+| Decision | Choice | Why |
+|----------|--------|-----|
+| Monorepo | Turborepo + pnpm | Shared packages across all apps |
+| Auth | UIP (NestJS + Prisma) | Owned multi-tenant RBAC + SSO |
+| AI Routing | yarlis.ai | Multi-model, cloud-agnostic |
+| UI System | @sdods | One design system, all 6 domains |
+| CICD | Jenkins on Cloud Run | Central dashboard + manual prod gates |
+| Secrets | Infisical → GCP SM | Portal UI + audit + sync |
+| Deploy | Cloud Run + CF Workers | Serverless, auto-scaling |
+
+---
+
+## 🎨 Brand Colors
 
 | Product | Primary | Accent |
 |---------|---------|--------|
-| MyBotBox | `#FF6B35` 🟠 | `#00D4AA` 🟢 |
-| Yarlis | `#6B3FFA` 🟣 | `#00D4AA` 🟢 |
-| SRT | `#2563EB` 🔵 | `#10B981` 🟢 |
-| SDODS | `#8B5CF6` 🟣 | `#F59E0B` 🟡 |
+| MyBotBox | `#FF6B35` | `#00D4AA` |
+| Yarlis | `#6B3FFA` | `#00D4AA` |
+| SmartRapidTriage | `#2563EB` | `#10B981` |
+| SDODS | `#8B5CF6` | `#F59E0B` |
 
 ---
 
-## 🔗 External Resources
+## 🔗 Resources
 
 | Resource | URL |
 |----------|-----|
-| Figma | _Link your Figma workspace_ |
-| Notion | _Link your Notion workspace_ |
+| CICD Dashboard | [cicd.yarlis.io](https://cicd.yarlis.io) |
+| Secrets Vault | [vault.yarlis.io](https://vault.yarlis.io) |
 | GitHub | [github.com/siri1410](https://github.com/siri1410) |
 | GCP Console | [console.cloud.google.com](https://console.cloud.google.com) |
 
-> **TODO**: Add your Figma and Notion workspace URLs to complete the documentation chain.
-
 ---
 
-## 📈 Revenue Priority
-
-1. **MyBotBox** → Fastest SaaS monetization ($1K MRR in 90 days)
-2. **SmartRapidTriage** → Vertical niche (per-seat)
-3. **Yarlis AI** → Higher-ticket enterprise
-4. **SDODS** → Open-core leverage
-5. **Yarlis IO** → Long-term scale
-
----
-
-## 📋 Operating System
-
-See [`OPERATING-SYSTEM.md`](OPERATING-SYSTEM.md) for the Yarlis Internal Operating System — founder execution framework with ceremonies, WIP limits, and cadences.
+_🔱 DEEJR — Never sleeps on goals. Updated: 2026-02-28_
