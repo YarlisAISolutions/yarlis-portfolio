@@ -1,0 +1,27 @@
+# ============================================================
+# rapidtriage.me — CI/CD Pipeline
+# Calls the reusable Yarlis pipeline
+# ============================================================
+
+name: RapidTriageME
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  pipeline:
+    uses: siri1410/yarlis-portfolio/.github/workflows/_pipeline.yml@main
+    with:
+      domain: rtm
+      project_id: rapidtriage-me
+      node_version: "20"
+      run_e2e: true
+      deploy_staging: true
+      deploy_prod: true
+      base_url_prod: https://rapidtriage.me
+      base_url_staging: https://rapidtriage-me--staging-hb55sy3z.web.app
+    secrets:
+      WIF_PROVIDER: ${{ secrets.GCP_WIF_PROVIDER }}
+      WIF_SA: ${{ secrets.GCP_WIF_SA_RTM }}
