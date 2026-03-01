@@ -11,7 +11,7 @@
 import * as crypto from "crypto";
 
 export type DomainCode = "yrl" | "yai" | "mbx" | "sdo" | "rtm" | "yio" | "all";
-export type Environment = "prod" | "staging" | "dev";
+export type Environment = "prod" | "staging";
 export type AppType = "firebase-hosting" | "npm-library" | "cloud-run" | "nextjs-vercel" | "chrome-extension";
 
 export interface AppIdentity {
