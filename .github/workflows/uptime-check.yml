@@ -1,0 +1,54 @@
+name: 🔍 Uptime Monitor
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: Health Check — All Services
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check mybotbox.com
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 https://mybotbox.com)
+          [ "$STATUS" = "200" ] || { echo "::error::mybotbox.com DOWN (HTTP $STATUS)"; exit 1; }
+          echo "✅ mybotbox.com OK ($STATUS)"
+
+      - name: Check staging-app.mybotbox.com
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 https://staging-app.mybotbox.com)
+          [ "$STATUS" = "200" ] || { echo "::error::staging-app.mybotbox.com DOWN (HTTP $STATUS)"; exit 1; }
+          echo "✅ staging-app.mybotbox.com OK ($STATUS)"
+
+      - name: Check rapidtriage.me
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 https://rapidtriage.me)
+          [ "$STATUS" = "200" ] || { echo "::error::rapidtriage.me DOWN (HTTP $STATUS)"; exit 1; }
+          echo "✅ rapidtriage.me OK ($STATUS)"
+
+      - name: Check rapidtriage.me staging
+        continue-on-error: true
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 https://rapidtriage-me--staging-hb55sy3z.web.app)
+          [ "$STATUS" = "200" ] || { echo "::warning::rapidtriage staging DOWN (HTTP $STATUS)"; }
+          echo "rapidtriage staging: $STATUS"
+
+      - name: Check yarlis.com
+        continue-on-error: true
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 https://yarlis.com)
+          echo "yarlis.com: $STATUS (continue-on-error — may not be live yet)"
+
+      - name: Uptime Summary
+        if: always()
+        run: |
+          echo "## 🔍 Uptime — $(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "| Service | HTTP |" >> $GITHUB_STEP_SUMMARY
+          echo "|---------|------|" >> $GITHUB_STEP_SUMMARY
+          for url in "https://mybotbox.com" "https://staging-app.mybotbox.com" "https://rapidtriage.me"; do
+            S=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$url" 2>/dev/null || echo "ERR")
+            ICON=$([ "$S" = "200" ] && echo "✅" || echo "🔴")
+            echo "| $url | $ICON $S |" >> $GITHUB_STEP_SUMMARY
+          done
