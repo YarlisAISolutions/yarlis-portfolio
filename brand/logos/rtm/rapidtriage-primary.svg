@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  RapidTriageME — Primary Logo (Dark Background)
+  Yarlis Brand System v1.0 | 2026-03-02
+  Usage: Dark backgrounds only. Min width: 160px.
+-->
+<svg width="320" height="80" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="wordGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="60%" stop-color="#C084FC"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="lensClip">
+      <circle cx="36" cy="38" r="14"/>
+    </clipPath>
+  </defs>
+
+  <!-- ── ICON ── -->
+  <g filter="url(#softGlow)">
+    <!-- Magnifying glass circle -->
+    <circle cx="36" cy="38" r="21" stroke="url(#iconGrad)" stroke-width="3" fill="none"/>
+    <!-- Lens fill -->
+    <circle cx="36" cy="38" r="14" fill="#0F172A"/>
+    <!-- Subtle inner ring -->
+    <circle cx="36" cy="38" r="14" stroke="url(#iconGrad)" stroke-width="1" fill="none" opacity="0.4"/>
+    <!-- Lightning bolt (triage/fast signal) -->
+    <path d="M39.5 26L30 40H37L33.5 52L45 36H38L39.5 26Z"
+          fill="url(#iconGrad)" clip-path="url(#lensClip)"/>
+    <!-- Handle -->
+    <line x1="52" y1="54" x2="63" y2="65" stroke="url(#iconGrad)"
+          stroke-width="4.5" stroke-linecap="round"/>
+    <!-- Scan pulse lines (left of lens) -->
+    <line x1="10" y1="33" x2="16" y2="33" stroke="#3B82F6" stroke-width="1.5"
+          stroke-linecap="round" opacity="0.6"/>
+    <line x1="8"  y1="38" x2="16" y2="38" stroke="#8B5CF6" stroke-width="1.5"
+          stroke-linecap="round" opacity="0.4"/>
+    <line x1="10" y1="43" x2="16" y2="43" stroke="#3B82F6" stroke-width="1.5"
+          stroke-linecap="round" opacity="0.6"/>
+  </g>
+
+  <!-- ── WORDMARK ── -->
+  <!-- "Rapid" -->
+  <text x="84" y="36"
+        font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="800" font-size="22"
+        fill="#F8FAFC" letter-spacing="-0.8">Rapid</text>
+  <!-- "Triage" in gradient -->
+  <text x="84" y="36"
+        font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="800" font-size="22"
+        fill="url(#wordGrad)" letter-spacing="-0.8"
+        dx="66">Triage</text>
+  <!-- "ME" superscript -->
+  <text x="210" y="24"
+        font-family="Inter, -apple-system, sans-serif"
+        font-weight="700" font-size="10"
+        fill="#8B5CF6" letter-spacing="1">ME</text>
+
+  <!-- Tagline -->
+  <text x="84" y="54"
+        font-family="Inter, -apple-system, sans-serif"
+        font-weight="400" font-size="11"
+        fill="#64748B" letter-spacing="2.5">MCP · CLAUDE · CURSOR</text>
+
+  <!-- Version pill -->
+  <rect x="84" y="61" width="56" height="13" rx="6.5"
+        fill="#1E293B" stroke="#334155" stroke-width="0.75"/>
+  <text x="91" y="71"
+        font-family="'JetBrains Mono', 'Fira Code', monospace"
+        font-size="8.5" fill="#60A5FA" font-weight="500">v2.1.0</text>
+  <circle cx="141" cy="67.5" r="1.5" fill="#10B981"/>
+  <text x="145" y="71"
+        font-family="'JetBrains Mono', 'Fira Code', monospace"
+        font-size="8.5" fill="#10B981" font-weight="500"> live</text>
+</svg>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yarlis Brand System — v1.0</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0A0A0F; --navy: #0F172A; --card: #1E293B; --border: #334155;
+      --text: #F8FAFC; --muted: #94A3B8; --dim: #64748B;
+      --blue: #3B82F6; --violet: #8B5CF6; --indigo: #6366F1;
+      --cyan: #00D9FF; --green: #10B981;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); padding: 48px 24px; }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+
+    h1 { font-size: 2rem; font-weight: 800; background: linear-gradient(90deg,#60A5FA,#C084FC); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 6px; }
+    .meta { color: var(--dim); font-size: .9rem; margin-bottom: 48px; }
+    h2 { font-size: 1rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin: 40px 0 16px; }
+    .grid { display: grid; gap: 16px; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-6 { grid-template-columns: repeat(6, 1fr); }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+
+    /* Color swatches */
+    .swatch { border-radius: 10px; overflow: hidden; }
+    .swatch-color { height: 64px; width: 100%; }
+    .swatch-info { padding: 10px 0 0; }
+    .swatch-name { font-weight: 600; font-size: .9rem; }
+    .swatch-hex { font-family: 'JetBrains Mono', monospace; font-size: .8rem; color: var(--muted); margin-top: 2px; }
+
+    /* Logo previews */
+    .logo-box { background: var(--navy); border: 1px solid var(--border); border-radius: 12px; padding: 32px; display: flex; align-items: center; justify-content: center; min-height: 120px; }
+    .logo-box.light { background: #F8FAFC; }
+    .logo-label { font-size: .75rem; color: var(--dim); margin-top: 10px; text-align: center; font-family: 'JetBrains Mono', monospace; }
+
+    /* Type specimens */
+    .type-row { padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; align-items: baseline; gap: 24px; }
+    .type-meta { min-width: 120px; font-size: .8rem; color: var(--dim); font-family: 'JetBrains Mono', monospace; }
+
+    /* Gradient pills */
+    .grad { height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: .85rem; }
+
+    /* Code */
+    pre { background: var(--navy); border: 1px solid var(--border); border-radius: 8px; padding: 16px; font-family: 'JetBrains Mono', monospace; font-size: .8rem; color: #60A5FA; overflow-x: auto; white-space: pre-wrap; }
+
+    /* Badges */
+    .badge-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; padding: 16px 0; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 20px; font-size: .8rem; font-weight: 600; }
+
+    /* Section divider */
+    .divider { height: 1px; background: var(--border); margin: 32px 0; }
+    @media(max-width:700px){.grid-4,.grid-6{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>🔱 Yarlis Brand System</h1>
+  <p class="meta">v1.0 · 2026-03-02 · Maintained by DEEJR · <code style="font-size:.8rem;color:#60A5FA">workspace/brand/guidelines/BRAND.md</code></p>
+
+  <!-- ──────────────────── LOGOS ──────────────────── -->
+  <h2>Logos</h2>
+  <div class="grid grid-2">
+    <div>
+      <div class="logo-box">
+        <!-- RTM Primary Logo (inline SVG) -->
+        <svg width="280" height="70" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="iG" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient>
+            <linearGradient id="wG" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#60A5FA"/><stop offset="60%" stop-color="#C084FC"/></linearGradient>
+            <clipPath id="cl1"><circle cx="36" cy="38" r="14"/></clipPath>
+          </defs>
+          <circle cx="36" cy="38" r="21" stroke="url(#iG)" stroke-width="3" fill="none"/>
+          <circle cx="36" cy="38" r="14" fill="#0F172A"/>
+          <path d="M39.5 26L30 40H37L33.5 52L45 36H38L39.5 26Z" fill="url(#iG)" clip-path="url(#cl1)"/>
+          <line x1="52" y1="54" x2="63" y2="65" stroke="url(#iG)" stroke-width="4.5" stroke-linecap="round"/>
+          <line x1="10" y1="33" x2="16" y2="33" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+          <line x1="8" y1="38" x2="16" y2="38" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <line x1="10" y1="43" x2="16" y2="43" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+          <text x="84" y="36" font-family="Inter,sans-serif" font-weight="800" font-size="22" fill="#F8FAFC" letter-spacing="-0.8">Rapid</text>
+          <text x="150" y="36" font-family="Inter,sans-serif" font-weight="800" font-size="22" fill="url(#wG)" letter-spacing="-0.8">Triage</text>
+          <text x="210" y="24" font-family="Inter,sans-serif" font-weight="700" font-size="10" fill="#8B5CF6" letter-spacing="1">ME</text>
+          <text x="84" y="54" font-family="Inter,sans-serif" font-weight="400" font-size="11" fill="#64748B" letter-spacing="2.5">MCP · CLAUDE · CURSOR</text>
+          <rect x="84" y="61" width="56" height="13" rx="6.5" fill="#1E293B" stroke="#334155" stroke-width="0.75"/>
+          <text x="91" y="71" font-family="monospace" font-size="8.5" fill="#60A5FA">v2.1.0</text>
+          <circle cx="141" cy="67.5" r="1.5" fill="#10B981"/>
+          <text x="145" y="71" font-family="monospace" font-size="8.5" fill="#10B981"> live</text>
+        </svg>
+      </div>
+      <p class="logo-label">rapidtriage-primary.svg · Dark background</p>
+    </div>
+    <div>
+      <div class="logo-box">
+        <!-- Yarlis wordmark -->
+        <svg width="180" height="50" viewBox="0 0 200 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="yG" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366F1"/><stop offset="50%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#3B82F6"/></linearGradient>
+            <linearGradient id="dG" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#3B82F6"/></linearGradient>
+          </defs>
+          <rect x="18" y="10" width="3" height="30" rx="1.5" fill="url(#yG)"/>
+          <path d="M10 10 L10 26 Q10 30 14 30 L18 30" stroke="url(#yG)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M29 10 L29 26 Q29 30 25 30 L21 30" stroke="url(#yG)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="10" cy="9" r="3" fill="url(#yG)"/>
+          <circle cx="19.5" cy="7" r="3.5" fill="url(#yG)"/>
+          <circle cx="29" cy="9" r="3" fill="url(#yG)"/>
+          <rect x="14" y="38" width="11" height="3" rx="1.5" fill="url(#yG)" opacity="0.6"/>
+          <text x="48" y="34" font-family="Inter,sans-serif" font-weight="700" font-size="26" fill="url(#yG)" letter-spacing="-1">yarlis</text>
+          <circle cx="164" cy="20" r="4" fill="url(#dG)"/>
+          <text x="48" y="47" font-family="Inter,sans-serif" font-weight="400" font-size="9" fill="#64748B" letter-spacing="2">AI ECOSYSTEM</text>
+        </svg>
+      </div>
+      <p class="logo-label">yarlis-primary.svg · Dark background</p>
+    </div>
+  </div>
+
+  <!-- Icon only -->
+  <div style="margin-top:16px" class="grid grid-4">
+    <div>
+      <div class="logo-box" style="min-height:80px">
+        <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="iG2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient><clipPath id="cl2"><circle cx="30" cy="30" r="14"/></clipPath></defs>
+          <rect width="64" height="64" rx="14" fill="#0F172A"/>
+          <circle cx="30" cy="30" r="20" stroke="url(#iG2)" stroke-width="2.5" fill="none"/>
+          <circle cx="30" cy="30" r="13" fill="#1E293B"/>
+          <path d="M33 19L25 32H31L28 43L38 28H32L33 19Z" fill="url(#iG2)" clip-path="url(#cl2)"/>
+          <line x1="45" y1="45" x2="55" y2="55" stroke="url(#iG2)" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="logo-label">icon 64px</p>
+    </div>
+    <div>
+      <div class="logo-box" style="min-height:80px">
+        <svg width="32" height="32" viewBox="0 0 64 64" fill="none"><defs><linearGradient id="iG3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient><clipPath id="cl3"><circle cx="30" cy="30" r="14"/></clipPath></defs><rect width="64" height="64" rx="14" fill="#0F172A"/><circle cx="30" cy="30" r="20" stroke="url(#iG3)" stroke-width="2.5" fill="none"/><circle cx="30" cy="30" r="13" fill="#1E293B"/><path d="M33 19L25 32H31L28 43L38 28H32L33 19Z" fill="url(#iG3)" clip-path="url(#cl3)"/><line x1="45" y1="45" x2="55" y2="55" stroke="url(#iG3)" stroke-width="4" stroke-linecap="round"/></svg>
+      </div>
+      <p class="logo-label">icon 32px</p>
+    </div>
+    <div>
+      <div class="logo-box" style="min-height:80px">
+        <svg width="16" height="16" viewBox="0 0 64 64" fill="none"><defs><linearGradient id="iG4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient><clipPath id="cl4"><circle cx="30" cy="30" r="14"/></clipPath></defs><rect width="64" height="64" rx="14" fill="#0F172A"/><circle cx="30" cy="30" r="20" stroke="url(#iG4)" stroke-width="2.5" fill="none"/><circle cx="30" cy="30" r="13" fill="#1E293B"/><path d="M33 19L25 32H31L28 43L38 28H32L33 19Z" fill="url(#iG4)" clip-path="url(#cl4)"/><line x1="45" y1="45" x2="55" y2="55" stroke="url(#iG4)" stroke-width="4" stroke-linecap="round"/></svg>
+      </div>
+      <p class="logo-label">favicon 16px</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="badge-row" style="padding:8px 0">
+        <span class="badge" style="background:linear-gradient(135deg,#3B82F6,#8B5CF6);color:#fff">🔍 RapidTriageME</span>
+      </div>
+      <div class="badge-row" style="padding:4px 0">
+        <span class="badge" style="background:#1E293B;border:1px solid #334155;color:#60A5FA">v2.1.0</span>
+        <span class="badge" style="background:#1E293B;border:1px solid #10B981;color:#10B981">● live</span>
+      </div>
+      <p class="logo-label" style="text-align:left">Badge variants</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ──────────────────── COLORS ──────────────────── -->
+  <h2>Color Palette — RTM</h2>
+  <div class="grid grid-6">
+    <div class="swatch"><div class="swatch-color" style="background:#3B82F6"></div><div class="swatch-info"><div class="swatch-name">Electric Blue</div><div class="swatch-hex">#3B82F6</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#8B5CF6"></div><div class="swatch-info"><div class="swatch-name">Violet</div><div class="swatch-hex">#8B5CF6</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#00D9FF"></div><div class="swatch-info"><div class="swatch-name">Cyan</div><div class="swatch-hex">#00D9FF</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#10B981"></div><div class="swatch-info"><div class="swatch-name">Emerald</div><div class="swatch-hex">#10B981</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#1E293B;border:1px solid #334155"></div><div class="swatch-info"><div class="swatch-name">Card</div><div class="swatch-hex">#1E293B</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#0F172A;border:1px solid #334155"></div><div class="swatch-info"><div class="swatch-name">Navy</div><div class="swatch-hex">#0F172A</div></div></div>
+  </div>
+
+  <h2 style="margin-top:24px">Color Palette — Yarlis</h2>
+  <div class="grid grid-6">
+    <div class="swatch"><div class="swatch-color" style="background:#6366F1"></div><div class="swatch-info"><div class="swatch-name">Indigo</div><div class="swatch-hex">#6366F1</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#8B5CF6"></div><div class="swatch-info"><div class="swatch-name">Purple</div><div class="swatch-hex">#8B5CF6</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#3B82F6"></div><div class="swatch-info"><div class="swatch-name">Blue</div><div class="swatch-hex">#3B82F6</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#10B981"></div><div class="swatch-info"><div class="swatch-name">Emerald</div><div class="swatch-hex">#10B981</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F8FAFC"></div><div class="swatch-info"><div class="swatch-name">White</div><div class="swatch-hex">#F8FAFC</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#64748B"></div><div class="swatch-info"><div class="swatch-name">Slate</div><div class="swatch-hex">#64748B</div></div></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ──────────────────── GRADIENTS ──────────────────── -->
+  <h2>Gradients</h2>
+  <div class="grid grid-3">
+    <div><div class="grad" style="background:linear-gradient(135deg,#3B82F6,#8B5CF6)">RTM Primary</div></div>
+    <div><div class="grad" style="background:linear-gradient(135deg,#6366F1,#8B5CF6,#3B82F6)">Yarlis Tri</div></div>
+    <div><div class="grad" style="background:linear-gradient(90deg,#60A5FA,#C084FC)">Hero Text</div></div>
+    <div><div class="grad" style="background:linear-gradient(135deg,#10B981,#3B82F6)">Live / Active</div></div>
+    <div><div class="grad" style="background:linear-gradient(135deg,#0F172A,#1E293B);border:1px solid #334155">Card Dark</div></div>
+    <div><div class="grad" style="background:linear-gradient(135deg,#00D9FF22,#8B5CF622);border:1px solid #334155;color:#00D9FF">Glow Tint</div></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ──────────────────── TYPOGRAPHY ──────────────────── -->
+  <h2>Typography</h2>
+  <div class="card">
+    <div class="type-row"><span class="type-meta">H1 · 800 · -0.8px</span><span style="font-size:2rem;font-weight:800;background:linear-gradient(90deg,#60A5FA,#C084FC);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Debug Faster. Ship Today.</span></div>
+    <div class="type-row"><span class="type-meta">H2 · 700 · -0.5px</span><span style="font-size:1.5rem;font-weight:700">MCP-Native Triage Platform</span></div>
+    <div class="type-row"><span class="type-meta">H3 · 600</span><span style="font-size:1.2rem;font-weight:600">14 Tools. Real-time. Zero copy-paste.</span></div>
+    <div class="type-row"><span class="type-meta">Body · 400 · 1.6lh</span><span style="font-size:1rem;color:#94A3B8;line-height:1.6">RapidTriageME bridges browser context and your AI coding assistant — eliminating the friction between a bug and its fix.</span></div>
+    <div class="type-row"><span class="type-meta">Label · 500 · 2px</span><span style="font-size:.8rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#64748B">MCP · CLAUDE · CURSOR · COPILOT</span></div>
+    <div class="type-row"><span class="type-meta">Mono · JetBrains</span><span style="font-family:'JetBrains Mono',monospace;font-size:.9rem;color:#60A5FA">npm install @rapidtriageme/mcp</span></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ──────────────────── DOMAIN PERSONALITIES ──────────────────── -->
+  <h2>Domain Brand Colors</h2>
+  <div class="grid grid-3">
+    <div class="card" style="border-left:3px solid #6366F1"><div style="font-weight:700">yarlis.com</div><div style="color:var(--muted);font-size:.85rem;margin-top:4px">Identity · Auth · Billing</div><div style="font-family:monospace;font-size:.8rem;color:#6366F1;margin-top:8px">#6366F1 Indigo</div></div>
+    <div class="card" style="border-left:3px solid #8B5CF6"><div style="font-weight:700">yarlis.ai</div><div style="color:var(--muted);font-size:.85rem;margin-top:4px">AI Orchestration</div><div style="font-family:monospace;font-size:.8rem;color:#8B5CF6;margin-top:8px">#8B5CF6 Purple</div></div>
+    <div class="card" style="border-left:3px solid #3B82F6"><div style="font-weight:700">mybotbox.com</div><div style="color:var(--muted);font-size:.85rem;margin-top:4px">SMB No-Code Chatbots</div><div style="font-family:monospace;font-size:.8rem;color:#3B82F6;margin-top:8px">#3B82F6 Blue</div></div>
+    <div class="card" style="border-left:3px solid #10B981"><div style="font-weight:700">sdods.com</div><div style="color:var(--muted);font-size:.85rem;margin-top:4px">Open-Core SDK</div><div style="font-family:monospace;font-size:.8rem;color:#10B981;margin-top:8px">#10B981 Emerald</div></div>
+    <div class="card" style="border-left:3px solid;border-image:linear-gradient(135deg,#3B82F6,#8B5CF6) 1"><div style="font-weight:700">rapidtriage.me</div><div style="color:var(--muted);font-size:.85rem;margin-top:4px">Developer Triage · MCP</div><div style="font-family:monospace;font-size:.8rem;background:linear-gradient(90deg,#3B82F6,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-top:8px">#3B82F6 → #8B5CF6</div></div>
+    <div class="card" style="border-left:3px solid #00D9FF"><div style="font-weight:700">yarlis.io</div><div style="color:var(--muted);font-size:.85rem;margin-top:4px">Deploy Accelerator</div><div style="font-family:monospace;font-size:.8rem;color:#00D9FF;margin-top:8px">#00D9FF Cyan</div></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ──────────────────── CODE ──────────────────── -->
+  <h2>Install Snippet (standard)</h2>
+  <pre>npm install @rapidtriageme/mcp
+
+# Claude Code — ~/claude_desktop_config.json
+{
+  "mcpServers": {
+    "rapidtriage": {
+      "command": "npx",
+      "args": ["@rapidtriageme/mcp"]
+    }
+  }
+}</pre>
+
+  <div style="margin-top:48px;text-align:center;color:var(--dim);font-size:.8rem">
+    🔱 Yarlis Brand System v1.0 · 2026-03-02 · <a href="../guidelines/BRAND.md" style="color:#60A5FA">BRAND.md</a> · Figma: rapidtriage.me project
+  </div>
+
+</div>
+</body>
+</html>

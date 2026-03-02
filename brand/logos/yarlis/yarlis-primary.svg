@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Yarlis — Primary Wordmark Logo
+  Yarlis Brand System v1.0 | 2026-03-02
+  The parent brand: identity, orchestration, ecosystem.
+-->
+<svg width="200" height="56" viewBox="0 0 200 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="yGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="dotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── TRIDENT ICON (🔱 abstracted) ── -->
+  <!-- Center shaft -->
+  <rect x="18" y="10" width="3" height="30" rx="1.5" fill="url(#yGrad)"/>
+  <!-- Left prong -->
+  <path d="M10 10 L10 26 Q10 30 14 30 L18 30" stroke="url(#yGrad)"
+        stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Right prong -->
+  <path d="M29 10 L29 26 Q29 30 25 30 L21 30" stroke="url(#yGrad)"
+        stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Top dots (crown) -->
+  <circle cx="10" cy="9" r="3" fill="url(#yGrad)"/>
+  <circle cx="19.5" cy="7" r="3.5" fill="url(#yGrad)"/>
+  <circle cx="29" cy="9" r="3" fill="url(#yGrad)"/>
+  <!-- Base -->
+  <rect x="14" y="38" width="11" height="3" rx="1.5" fill="url(#yGrad)" opacity="0.6"/>
+
+  <!-- ── WORDMARK ── -->
+  <text x="48" y="34"
+        font-family="Inter, -apple-system, sans-serif"
+        font-weight="700" font-size="26"
+        fill="url(#yGrad)" letter-spacing="-1">yarlis</text>
+
+  <!-- Active dot -->
+  <circle cx="184" cy="20" r="4" fill="url(#dotGrad)"/>
+
+  <!-- Tagline -->
+  <text x="48" y="47"
+        font-family="Inter, -apple-system, sans-serif"
+        font-weight="400" font-size="9"
+        fill="#64748B" letter-spacing="2">AI ECOSYSTEM</text>
+</svg>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  RapidTriageME — Icon Only (Square, for favicons, app icons, badges)
+  Sizes: 16×16, 32×32, 64×64, 128×128, 512×512
+-->
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="c1"><circle cx="30" cy="30" r="14"/></clipPath>
+  </defs>
+
+  <!-- Dark rounded background -->
+  <rect width="64" height="64" rx="14" fill="#0F172A"/>
+
+  <!-- Outer ring -->
+  <circle cx="30" cy="30" r="20" stroke="url(#g1)" stroke-width="2.5" fill="none" filter="url(#glow)"/>
+  <!-- Lens -->
+  <circle cx="30" cy="30" r="13" fill="#1E293B"/>
+  <!-- Lightning bolt -->
+  <path d="M33 19L25 32H31L28 43L38 28H32L33 19Z"
+        fill="url(#g1)" clip-path="url(#c1)" filter="url(#glow)"/>
+  <!-- Handle -->
+  <line x1="45" y1="45" x2="55" y2="55" stroke="url(#g1)"
+        stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+</svg>
