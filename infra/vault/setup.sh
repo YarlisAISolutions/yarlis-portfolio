@@ -9,7 +9,7 @@ set -e
 PROJECT="yarlis-platform"
 WIF_POOL="yarlis-github-pool"
 WIF_PROVIDER="yarlis-github-provider"
-GITHUB_ORG="siri1410"
+GITHUB_ORG="YarlisAISolutions"
 
 echo "🔱 Setting up Yarlis Vault..."
 

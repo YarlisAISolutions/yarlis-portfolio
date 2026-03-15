@@ -34,7 +34,7 @@ All notable changes across the Yarlis ecosystem are tracked here.
 #### 🏗️ Infrastructure
 - `staging-app.mybotbox.com` — DNS CNAME via Route 53 → Firebase Hosting (replaces `stagingcore.mybotbox.com` typo)
 - Removed `stagingcore.mybotbox.com` from Route 53 and Firebase Hosting
-- GitHub Cloud Build connection authorized (`github-siri1410`)
+- GitHub Cloud Build connection authorized (`github-YarlisAISolutions`)
 - Cloud Build yaml fixed: correct service name (`mybotbox-app-staging`, not `ystudio-app-staging`)
 
 ### SmartRapidTriage (smartrapidtriage)

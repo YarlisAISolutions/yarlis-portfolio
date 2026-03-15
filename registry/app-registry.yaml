@@ -63,7 +63,7 @@ apps:
     domain_code: rtm
     app_type: firebase-hosting
     template: firebase-fullstack-v1
-    repo: siri1410/smartrapidtriage
+    repo: YarlisAISolutions/smartrapidtriage
     gcp_project: rapidtriage-me
 
     sdods_integrations:
@@ -130,7 +130,7 @@ apps:
     domain_code: rtm
     app_type: npm-library
     template: npm-publish-v1
-    repo: siri1410/smartrapidtriage
+    repo: YarlisAISolutions/smartrapidtriage
     path: rapidtriage-mcp/
     npm_scope: "@rapidtriageme"
     npm_package: "@rapidtriageme/mcp"
@@ -151,7 +151,7 @@ apps:
     domain_code: mbx
     app_type: firebase-hosting
     template: firebase-fullstack-v1
-    repo: siri1410/mybotbox
+    repo: YarlisAISolutions/mybotbox
     gcp_project: mybotbox-prod
 
     sdods_integrations:
@@ -199,7 +199,7 @@ apps:
     domain_code: sdo
     app_type: npm-library
     template: npm-monorepo-v1
-    repo: siri1410/sdods
+    repo: YarlisAISolutions/sdods
     npm_scope: "@sdods"
     packages:
       - "@sdods/core"
@@ -226,7 +226,7 @@ apps:
     domain_code: yai
     app_type: npm-library
     template: npm-monorepo-v1
-    repo: siri1410/yarlisai
+    repo: YarlisAISolutions/yarlisai
     npm_scope: "@yarlisai"
     packages:
       - "@yarlisai/contracts"
@@ -258,7 +258,7 @@ apps:
     domain_code: yrl
     app_type: cloud-run
     template: cloud-run-node-v1
-    repo: siri1410/yarlis-platform
+    repo: YarlisAISolutions/yarlis-platform
     gcp_project: yarlis-platform
 
     sdods_integrations:

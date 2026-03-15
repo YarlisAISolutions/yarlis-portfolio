@@ -15,9 +15,9 @@ pipeline {
   }
 
   environment {
-    GITHUB_ORG       = 'siri1410'
+    GITHUB_ORG       = 'YarlisAISolutions'
     REPO             = 'yarlis-portfolio'
-    GIT_AUTHOR_EMAIL = 'siri1410@users.noreply.github.com'
+    GIT_AUTHOR_EMAIL = 'YarlisAISolutions@users.noreply.github.com'
     GIT_AUTHOR_NAME  = 'DEEJR Jenkins'
   }
 
@@ -163,7 +163,7 @@ curl -s -X POST "https://api.telegram.org/bot$TG_TOKEN/sendMessage" \
   --data-urlencode "text=✅ *Brand Deploy #$BUILD_NUMBER*
 Status: $STATUS
 Commit: \`$SHA\`
-Pages: https://siri1410.github.io/yarlis-portfolio/
+Pages: https://YarlisAISolutions.github.io/yarlis-portfolio/
 npm: @yarlisc/brand@1.0.0" || true
           '''
         }
