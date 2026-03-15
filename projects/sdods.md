@@ -11,7 +11,7 @@
 | Field | Value |
 |-------|-------|
 | **Domain** | sdods.com |
-| **Repo** | [sdods](https://github.com/Yarlis/sdods) |
+| **Repo** | [sdods](https://github.com/YarlisAISolutions/sdods) |
 | **Status** | 🟡 Build |
 | **Category** | Platform |
 | **Monetization** | Open Core |

@@ -106,19 +106,19 @@ quick_access:
 
   repos:
     - name: yarlis-platform
-      url: https://github.com/siri1410/yarlis-platform
+      url: https://github.com/YarlisAISolutions/yarlis-platform
       description: Monorepo for yarlis.com, yarlis.ai, yarlis.io
     - name: ystudio (MyBotBox)
-      url: https://github.com/siri1410/mybotbox-platform
+      url: https://github.com/YarlisAISolutions/mybotbox-platform
       description: MyBotBox chatbot builder
     - name: smartrapidtriage
-      url: https://github.com/siri1410/smartrapidtriage
+      url: https://github.com/YarlisAISolutions/smartrapidtriage
       description: AI triage platform
     - name: sdods
-      url: https://github.com/siri1410/sdods
+      url: https://github.com/YarlisAISolutions/sdods
       description: Open-source component library
     - name: yarlis-portfolio
-      url: https://github.com/siri1410/yarlis-portfolio
+      url: https://github.com/YarlisAISolutions/yarlis-portfolio
       description: This is my portfolio index
 
 # ============================================================
@@ -676,7 +676,7 @@ products:
       npm_auth: https://npmjs.com/package/@sdods/auth
       npm_ui: https://npmjs.com/package/@sdods/ui
       npm_observability: https://npmjs.com/package/@sdods/observability
-      github: https://github.com/siri1410/sdods
+      github: https://github.com/YarlisAISolutions/sdods
     
     security:
       review_schedule: "Quarterly (Feb, May, Aug, Nov)"

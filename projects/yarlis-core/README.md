@@ -4,7 +4,7 @@
 
 | Resource | URL |
 |----------|-----|
-| **Repo** | [GitHub](https://github.com/siri1410/) |
+| **Repo** | [GitHub](https://github.com/YarlisAISolutions/) |
 | **Live** | |
 | **Figma** | <!-- Add Figma URL --> |
 | **Notion** | <!-- Add Notion URL --> |

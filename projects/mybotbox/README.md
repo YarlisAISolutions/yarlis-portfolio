@@ -6,7 +6,7 @@
 
 | Resource | URL |
 |----------|-----|
-| **Repo** | [mybotbox-platform](https://github.com/siri1410/mybotbox-platform) |
+| **Repo** | [mybotbox-platform](https://github.com/YarlisAISolutions/mybotbox-platform) |
 | **Production** | [mybotbox.com](https://mybotbox.com) |
 | **Staging** | [staging-app.mybotbox.com](https://staging-app.mybotbox.com) |
 | **Figma** | <!-- TODO: Add Figma design system URL --> |

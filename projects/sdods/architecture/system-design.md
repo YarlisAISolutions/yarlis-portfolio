@@ -149,6 +149,6 @@ Products remain **independent repos**. SDODS is consumed as npm packages, not as
 
 ## References
 
-- Repo: github.com/siri1410/sdods
+- Repo: github.com/YarlisAISolutions/sdods
 - Changelog: CHANGELOG.md
 - Docs: docs/ (planned)

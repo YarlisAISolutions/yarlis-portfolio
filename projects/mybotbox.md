@@ -11,7 +11,7 @@
 | Field | Value |
 |-------|-------|
 | **Domain** | mybotbox.com |
-| **Repo** | [mybotbox-platform](https://github.com/siri1410/mybotbox-platform) |
+| **Repo** | [mybotbox-platform](https://github.com/YarlisAISolutions/mybotbox-platform) |
 | **Status** | 🟢 Beta |
 | **Category** | Product |
 | **Monetization** | SaaS |

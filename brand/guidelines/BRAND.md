@@ -210,7 +210,7 @@ color: #10B981;  /* green for output */
 
 ### GitHub Badge
 ```markdown
-[![CI](https://github.com/siri1410/smartrapidtriage/actions/workflows/firebase-deploy.yml/badge.svg)](https://github.com/siri1410/smartrapidtriage/actions)
+[![CI](https://github.com/YarlisAISolutions/smartrapidtriage/actions/workflows/firebase-deploy.yml/badge.svg)](https://github.com/YarlisAISolutions/smartrapidtriage/actions)
 ```
 
 ### Standard taglines
@@ -243,7 +243,7 @@ brand/
 
 | Location | URL |
 |----------|-----|
-| GitHub (source) | `github.com/siri1410/yarlis-portfolio/brand/` |
+| GitHub (source) | `github.com/YarlisAISolutions/yarlis-portfolio/brand/` |
 | Figma (design specs) | `figma.com/files/project/557500720` (rapidtriage.me project) |
 | Notion (strategy) | Yarlis Strategy Hub → Brand |
 | Local workspace | `/Users/sy/.openclaw/workspace/brand/` |

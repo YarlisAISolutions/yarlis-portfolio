@@ -111,7 +111,7 @@ git config user.name  "$GIT_AUTHOR_NAME"
 git add -A
 git commit -m "deploy: brand sheet v1.0 [Jenkins #$BUILD_NUMBER]"
 git push --force \
-  "https://$GH_TOKEN@github.com/siri1410/yarlis-portfolio.git" \
+  "https://$GH_TOKEN@github.com/YarlisAISolutions/yarlis-portfolio.git" \
   HEAD:gh-pages
 echo "Deployed to GitHub Pages"
           '''

@@ -11,7 +11,7 @@
 | Field | Value |
 |-------|-------|
 | **Domain** | yarlis.io |
-| **Repo** | [yarlis-platform](https://github.com/siri1410/yarlis-platform) |
+| **Repo** | [yarlis-platform](https://github.com/YarlisAISolutions/yarlis-platform) |
 | **Status** | 🔴 Idea |
 | **Category** | Product |
 | **Monetization** | Usage-based |

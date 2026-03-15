@@ -142,7 +142,7 @@ function generateHTML(domains: { domains: Domain[] }, products: { products: Prod
       <nav class="flex gap-6 text-sm">
         <a href="https://yarlis.com" class="text-gray-300 hover:text-white">Home</a>
         <a href="https://yarlis.ai" class="text-gray-300 hover:text-white">Platform</a>
-        <a href="https://github.com/siri1410" class="text-gray-300 hover:text-white">GitHub</a>
+        <a href="https://github.com/YarlisAISolutions" class="text-gray-300 hover:text-white">GitHub</a>
       </nav>
     </div>
   </header>
@@ -192,7 +192,7 @@ function generateHTML(domains: { domains: Domain[] }, products: { products: Prod
     <p class="mt-2">
       <a href="/products.json" class="text-blue-400 hover:text-blue-300">API</a>
       •
-      <a href="https://github.com/siri1410/yarlis-portfolio" class="text-blue-400 hover:text-blue-300">Source</a>
+      <a href="https://github.com/YarlisAISolutions/yarlis-portfolio" class="text-blue-400 hover:text-blue-300">Source</a>
     </p>
   </footer>
 

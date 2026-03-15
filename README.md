@@ -15,12 +15,12 @@
 
 | Domain | Product | Repo | Status | Live | Stack |
 |--------|---------|------|--------|------|-------|
-| [mybotbox.com](https://mybotbox.com) | **MyBotBox** | [mybotbox-platform](https://github.com/siri1410/mybotbox-platform) | 🟢 Beta | ✅ | Bun · Next.js 15 · Firebase · Cloud Run |
-| [rapidtriage.me](https://rapidtriage.me) | **SmartRapidTriage** | [rapidtriageME](https://github.com/siri1410/rapidtriageME) | 🟢 Beta | ✅ | TS · Cloudflare Workers · Wrangler |
-| [yarlis.com](https://yarlis.com) | **Yarlis Core** | [yarlis-platform](https://github.com/siri1410/yarlis-platform) | 🟡 Build | ✅ | Next.js 15 · Turborepo · Cloud Run |
-| [yarlis.ai](https://yarlis.ai) | **Yarlis AI** | [yarlis-platform](https://github.com/siri1410/yarlis-platform) | 🟡 Build | ❌ | NestJS · LangChain · Multi-model |
-| [sdods.com](https://sdods.com) | **SDODS** | [sdods](https://github.com/siri1410/sdods) | 🟡 Build | ❌ | TypeScript · Open Source |
-| [yarlis.io](https://yarlis.io) | **Yarlis IO** | [yarlis-platform](https://github.com/siri1410/yarlis-platform) | 🔴 Idea | ❌ | TBD |
+| [mybotbox.com](https://mybotbox.com) | **MyBotBox** | [mybotbox-platform](https://github.com/YarlisAISolutions/mybotbox-platform) | 🟢 Beta | ✅ | Bun · Next.js 15 · Firebase · Cloud Run |
+| [rapidtriage.me](https://rapidtriage.me) | **SmartRapidTriage** | [rapidtriageME](https://github.com/YarlisAISolutions/rapidtriageME) | 🟢 Beta | ✅ | TS · Cloudflare Workers · Wrangler |
+| [yarlis.com](https://yarlis.com) | **Yarlis Core** | [yarlis-platform](https://github.com/YarlisAISolutions/yarlis-platform) | 🟡 Build | ✅ | Next.js 15 · Turborepo · Cloud Run |
+| [yarlis.ai](https://yarlis.ai) | **Yarlis AI** | [yarlis-platform](https://github.com/YarlisAISolutions/yarlis-platform) | 🟡 Build | ❌ | NestJS · LangChain · Multi-model |
+| [sdods.com](https://sdods.com) | **SDODS** | [sdods](https://github.com/YarlisAISolutions/sdods) | 🟡 Build | ❌ | TypeScript · Open Source |
+| [yarlis.io](https://yarlis.io) | **Yarlis IO** | [yarlis-platform](https://github.com/YarlisAISolutions/yarlis-platform) | 🔴 Idea | ❌ | TBD |
 
 ---
 
@@ -28,8 +28,8 @@
 
 | Service | URL | Purpose | Status |
 |---------|-----|---------|--------|
-| **UIP** (Identity) | [uip](https://github.com/siri1410/uip) | Multi-tenant auth, RBAC, SSO | 🟢 Published |
-| **@sdods** (UI Library) | [sdods](https://github.com/siri1410/sdods) | Shared component library | 🟢 Published |
+| **UIP** (Identity) | [uip](https://github.com/YarlisAISolutions/uip) | Multi-tenant auth, RBAC, SSO | 🟢 Published |
+| **@sdods** (UI Library) | [sdods](https://github.com/YarlisAISolutions/sdods) | Shared component library | 🟢 Published |
 | **CICD** | [cicd.yarlis.io](https://cicd.yarlis.io) | Jenkins on Cloud Run | 🟡 Deploying |
 | **Vault** | [vault.yarlis.io](https://vault.yarlis.io) | Infisical secrets portal | 🟡 Setup |
 
@@ -105,7 +105,7 @@ Secret format: `{domain}-{env}-{variable}` (e.g. `mybotbox-production-stripe-key
 |----------|-----|
 | CICD Dashboard | [cicd.yarlis.io](https://cicd.yarlis.io) |
 | Secrets Vault | [vault.yarlis.io](https://vault.yarlis.io) |
-| GitHub | [github.com/siri1410](https://github.com/siri1410) |
+| GitHub | [github.com/YarlisAISolutions](https://github.com/YarlisAISolutions) |
 | GCP Console | [console.cloud.google.com](https://console.cloud.google.com) |
 
 ---

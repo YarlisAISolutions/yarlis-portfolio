@@ -6,7 +6,7 @@
 
 | Resource | URL |
 |----------|-----|
-| **Repo** | [smartrapidtriage](https://github.com/siri1410/smartrapidtriage) |
+| **Repo** | [smartrapidtriage](https://github.com/YarlisAISolutions/smartrapidtriage) |
 | **Production** | [rapidtriage.me](https://rapidtriage.me) |
 | **Figma** | <!-- TODO: Add Figma URL --> |
 | **Notion** | <!-- TODO: Add Notion URL --> |

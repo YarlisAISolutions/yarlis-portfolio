@@ -21,7 +21,7 @@
 ## 1️⃣ Yarlis.com (Core Platform)
 
 > **Role:** Parent company, brand hub, SSO gateway
-> **Repo:** [yarlis-platform](https://github.com/siri1410/yarlis-platform)
+> **Repo:** [yarlis-platform](https://github.com/YarlisAISolutions/yarlis-platform)
 > **Domain:** yarlis.com
 
 ### Tech Stack
@@ -67,7 +67,7 @@ yarlis-platform/
 ## 2️⃣ Yarlis.ai (AI Platform)
 
 > **Role:** AI-powered development & agent orchestration
-> **Repo:** [yarlis-platform](https://github.com/siri1410/yarlis-platform) (monorepo)
+> **Repo:** [yarlis-platform](https://github.com/YarlisAISolutions/yarlis-platform) (monorepo)
 > **Domain:** yarlis.ai
 
 ### Tech Stack
@@ -103,7 +103,7 @@ yarlis-platform/
 ## 3️⃣ MyBotBox (Workflow Automation)
 
 > **Role:** No-code workflow automation marketplace
-> **Repo:** [mybotbox-platform](https://github.com/siri1410/mybotbox-platform)
+> **Repo:** [mybotbox-platform](https://github.com/YarlisAISolutions/mybotbox-platform)
 > **Domain:** mybotbox.com
 
 ### Tech Stack
@@ -157,7 +157,7 @@ yarlis-platform/
 ## 4️⃣ SDODS (Open Source Core)
 
 > **Role:** Software Development & Operations Data Systems
-> **Repo:** [sdods](https://github.com/Yarlis/sdods)
+> **Repo:** [sdods](https://github.com/YarlisAISolutions/sdods)
 > **Domain:** sdods.com
 
 ### Tech Stack
@@ -196,7 +196,7 @@ import { Button } from '@sdods/ui';
 ## 5️⃣ Yarlis.io (Developer Tools)
 
 > **Role:** Developer tools and API ecosystem
-> **Repo:** [yarlis-platform](https://github.com/siri1410/yarlis-platform) (monorepo)
+> **Repo:** [yarlis-platform](https://github.com/YarlisAISolutions/yarlis-platform) (monorepo)
 > **Domain:** yarlis.io
 
 ### Tech Stack
@@ -226,7 +226,7 @@ import { Button } from '@sdods/ui';
 ## 6️⃣ RapidTriageMe (Browser Automation)
 
 > **Role:** Browser automation & debugging platform
-> **Repo:** [smartrapidtriage](https://github.com/siri1410/smartrapidtriage)
+> **Repo:** [smartrapidtriage](https://github.com/YarlisAISolutions/smartrapidtriage)
 > **Domain:** rapidtriage.me
 
 ### Tech Stack
