@@ -16,7 +16,7 @@
 | Domain | Product | Repo | Status | Live | Stack |
 |--------|---------|------|--------|------|-------|
 | [mybotbox.com](https://mybotbox.com) | **MyBotBox** | [mybotbox-platform](https://github.com/YarlisAISolutions/mybotbox-platform) | 🟢 Beta | ✅ | Bun · Next.js 15 · Firebase · Cloud Run |
-| [rapidtriage.me](https://rapidtriage.me) | **SmartRapidTriage** | [rapidtriageME](https://github.com/YarlisAISolutions/SMARTRAPIDTRIAGE) | 🟢 Beta | ✅  | TS ·Firebase  · Cloud RUn |
+| [rapidtriage.me](https://rapidtriage.me) | **SmartRapidTriage** | [rapidtriageME](https://github.com/YarlisAISolutions/SMARTRAPIDTRIAGE) | 🟢 Beta | ✅  | TS ·Firebase  · Cloud Run |
 | [yarlis.com](https://yarlis.com) | **Yarlis Core** | [yarlis-platform](https://github.com/YarlisAISolutions/yarlis-platform) | 🟡 Build | ✅ | Next.js 15 · Turborepo · Cloud Run |
 | [yarlis.ai](https://yarlis.ai) | **Yarlis AI** | [yarlis-platform](https://github.com/YarlisAISolutions/yarlis-platform) | 🟡 Build | ❌ | NestJS · LangChain · Multi-model |
 | [sdods.com](https://sdods.com) | **SDODS** | [sdods](https://github.com/YarlisAISolutions/sdods) | 🟡 Build | ❌ | TypeScript · Open Source |
